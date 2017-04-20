@@ -1,0 +1,36 @@
+const Hapi = require('hapi');
+const offerController = require('./controllers/offer-controller');
+
+const server = new Hapi.Server();
+server.connection({ 
+  port: 3000, 
+  host: 'localhost',
+  routes: {
+    cors: true
+  }
+});
+
+server.route({
+  method: 'POST',
+  path: '/offer',
+  handler: offerController.createOffer
+});
+
+server.route({
+  method: 'DELETE',
+  path: '/offer/{id}',
+  handler: offerController.deleteOffer
+});
+
+server.route({
+  method: 'GET',
+  path: '/offers/{limit?}',
+  handler: offerController.getOffers
+});
+
+server.start((err) => {
+  if (err) {
+    throw err;
+  }
+  console.log(`Server running at: ${server.info.uri}`);
+});
