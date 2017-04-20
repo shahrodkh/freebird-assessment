@@ -1,5 +1,5 @@
 const Hapi = require('hapi');
-const offerController = require('./controllers/offer-controller');
+const offerController = require('./controllers/offerController');
 
 const server = new Hapi.Server();
 server.connection({ 

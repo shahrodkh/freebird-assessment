@@ -1,4 +1,4 @@
-const Offer = require('../models/offer-model');
+const Offer = require('../models/offerModel');
 
 function createOffer(req, res) {
   Offer.create(req.payload, (err, offer) => {
