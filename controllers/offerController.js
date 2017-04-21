@@ -18,7 +18,7 @@ function deleteOffer(request, reply) {
 
 function getOffers(request, reply) {
   const limit = request.params.limit ? 
-    { limit : parseInt(encodeURIComponent(request.params.limit), 10) } :
+    { limit: parseInt(encodeURIComponent(request.params.limit), 10) } :
     null;
   Offer.find({}, null, limit, (err, offers) => {
     if (err) return reply(err);
