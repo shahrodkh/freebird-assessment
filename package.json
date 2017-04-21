@@ -12,5 +12,9 @@
   "dependencies": {
     "hapi": "^16.1.1",
     "mongoose": "^4.9.5"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
   }
 }
